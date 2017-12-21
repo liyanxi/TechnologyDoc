@@ -4,11 +4,9 @@
 * [prop与state初探][1]
 * [React Native基础组件讲解][2]
 * [React Native如何嵌入到原生应用探索][3]
-* [Retrofit 官方文档翻译][4]
 
 #### Android 相关技术文档合集
-待定
-
+* [Retrofit 官方文档翻译][4]
 
 ------------------
 
