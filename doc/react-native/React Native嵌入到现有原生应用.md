@@ -2,7 +2,7 @@
 
 >如果你正准备从头开始制作一个新的应用，那么React Native会是个非常好的选择。但如果你只想给现有的原生应用中添加一两个视图或是业务流程，React Native也同样不在话下。只需简单几步，你就可以给原有应用加上新的基于React Native的特性、画面和视图等。
 
-### 核心概念
+### 1.核心概念
 这里把React Native组件植入到Android应用中有如下几个主要步骤：
 
 1. 首先要了解你要植入的React Native组件。
@@ -15,10 +15,10 @@
 8. 在真机上运行、调试（这里需要先更新`bundle`文件）。
 9. 打包。
 
-### 开发环境准备
+### 2.开发环境准备
 此处可参考我写的另一篇文章[React Native环境搭建][0]，(已有环境的，此处可选择跳过).
 
-### 添加JS代码管理
+### 3.添加JS代码管理
 * 在项目的根目录运行以下命令：
 
 ```
@@ -48,7 +48,7 @@ AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
 
 ```
 
-### 添加App开发准备操作
+### 4.添加App开发准备操作
 * 在你app的`build.gradle`文件内添加`React Native`相关依赖：
 
 `compile 'com.facebook.react:react-native:+' // From node_modules.`
@@ -74,7 +74,7 @@ allprojects {
  - 如果你需要访问React Native的DevSettingsActivity，则需要注册
 `<activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />`
 
-### 准备工作搞定：接下来添加原生代码
+### 5.准备工作搞定：接下来添加原生代码
 
 * 纯React Native页面主要代码（底部有完整代码地址）
 
@@ -217,7 +217,7 @@ public class HybridActivity extends AppCompatActivity {
 }
 ```
 
-### 配置权限保证开发过程中红屏错误能正确展示
+### 6.配置权限保证开发过程中红屏错误能正确展示
 
 >如果您的应用程式指定的Android API等级为23或更高，请确定您已为开发版本启用了重叠权限。您可以使用“设置”进行检查。 canDrawOverlays（this）;.这在开发版本中是必需的，因为反应本地开发错误必须显示在所有其他窗口之上。由于在API级别23中引入了新的权限系统，用户需要批准它。这可以通过将下面的代码添加到onCreate（）方法中的Activity文件来实现。 OVERLAY_PERMISSION_REQ_CODE是类的一个字段，它负责将结果传递回Activity。
 
@@ -245,7 +245,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 }
 ```
 
-### 应用飞起来
+### 7.应用飞起来
 
 * 启动服务器`React packager`
 
@@ -255,21 +255,21 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 >$react-native start
 
-![启动服务](images/start-server.png)
+![启动服务](http://img.blog.csdn.net/20170110192315891?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2luODE2NzIzNDU5/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
   
 * 启动App应用(看效果)
 
-<imgs src='images/demo.gif' width=350 alt='动态图'>
+![app效果](http://img.blog.csdn.net/20170110193117207?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2luODE2NzIzNDU5/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
 * 调试过程踩过的坑
 
  启动ReactNative相关Activity页面崩溃
-![app崩溃](images/error1.png)
+![app崩溃](http://img.blog.csdn.net/20170110192017765?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2luODE2NzIzNDU5/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
  解决方案看代码截图：
- ![崩溃解决](images/error1-resolve.png)
+ ![崩溃解决](http://img.blog.csdn.net/20170110192201390?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2luODE2NzIzNDU5/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
  <font color='red'> 此处红框内需要注意开发调试过程需要设置为true动态加载，false涉及到静态bundle文件，下面打包会单独讲。</font>
 
-### 在Android Studio中打包apk
+### 8.在Android Studio中打包apk
 >你也可以使用Android Studio来打包！You can use Android Studio to create your release builds too! It’s as easy as creating release builds of your previously-existing native Android app. There’s just one additional step, which you’ll have to do before every release build. You need to execute the following to create a React Native bundle, which’ll be included with your native Android app:
 
 ```
@@ -280,20 +280,12 @@ react-native bundle --platform android --dev false --entry-file ./index.android.
 > 
 > 2.远程bundle文件（用于动态更新，这里暂不详解）
 
-#### 到此，相信你的应用应该跑起来了。期间如果遇到问题可给我留言，或发邮件（itingchunyu@163.com）咨询我，感谢你的浏览；
+#### 9.到此，相信你的应用应该跑起来了。期间如果遇到问题可给我留言，或发邮件（itingchunyu@163.com）咨询我，感谢你的浏览；
 
-### 完整代码地址
+### 10.完整代码地址
 [ReactNativeDemo][1]
 
 ---------------------------
 
 [0]: http://blog.csdn.net/win816723459/article/details/53395038
 [1]: https://github.com/liyanxi/ReactNativeDemo
-
-* 坑一：（Warning:Conflict with dependency 'com.google.code.findbugs:jsr305'. Resolved versions for app (3.0.0) and test app (2.0.1) differ. See http://g.co/androidstudio/app-test-app-conflict for details.） 
-* 坑二：maven {
-            // All of React Native (JS, Android binaries) is installed from npm
-            url "$rootDir/node_modules/react-native/android"
-        }
-* java.lang.RuntimeException: com.facebook.react.devsupport.JSException: Could not get BatchedBridge, make sure your bundle is packaged correctly；
-* react-native bundle --platform android --dev false --entry-file ./index.android.js --bundle-output ./app/src/main/assets/index.android.bundle --assets-dest ./app/src/main/res/
