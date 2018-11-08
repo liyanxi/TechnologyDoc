@@ -58,7 +58,7 @@ flutter doctor
 
 **运行正常情况：**
 
-![flutter-doctor-result](./images/flutter-doctor-result_.jpg)
+![flutter-doctor-result](https://github.com/liyanxi/TechnologyDoc/tree/master/doc/flutter/images/flutter-doctor-result_.jpg)
 *这里我们只关注红色方框内的，这里有四部分下面逐一解释（Android，先不考虑IOS情况，处理一致）：*
 
 * 第一部分监测的是Flutter相关依赖项结果，如果第一次运行会先去下载；
@@ -83,20 +83,20 @@ flutter doctor
 5. 创建完成
 
 下面请看默认Flutter工程的目录结构：
-![目录结构](./images/flutter-project-structor.jpg)
+![目录结构](https://github.com/liyanxi/TechnologyDoc/tree/master/doc/flutter/images/flutter-project-structor.jpg)
 *在项目目录中，您应用程序的代码位于 `lib/main.dart`.*
 #### 运行
-![工具栏](./images/flutter-tools.jpg)
+![工具栏](https://github.com/liyanxi/TechnologyDoc/tree/master/doc/flutter/images/flutter-tools.jpg)
 *点击上述绿色三角执行程序，您有可能遇到一些异常现象比如：dart not support 或 flutter not found sdk 等等，那么你就得查看下如下两处地方是否配置正确：*
 *开启Dart支持:*
-![dart支持](./images/flutter-plugin-install_1.png)
+![dart支持](https://github.com/liyanxi/TechnologyDoc/tree/master/doc/flutter/images/flutter-plugin-install_1.png)
 *Flutter SDK路径配置:*
-![](./images/flutter-plugin-install_2.jpg)
+![SDK配置](https://github.com/liyanxi/TechnologyDoc/tree/master/doc/flutter/images/flutter-plugin-install_2.jpg)
 
 *然后再次运行,即日志界面的执行过程如下：*
-![执行过程](./images/flutter-run-result.png)
+![执行过程](https://github.com/liyanxi/TechnologyDoc/tree/master/doc/flutter/images/flutter-run-result.png)
 *查看模拟器运行结果--HelloWorld：*
-![](./images/flutter-helloworld.png)
+![Demo](https://github.com/liyanxi/TechnologyDoc/tree/master/doc/flutter/images/flutter-helloworld.png)
 
 到此说明我们的开发环境安装正确，但不代表您们也会这么顺利，毕竟每个人都电脑环境不一致，如遇到问题可给我留言，我们一起探讨，～谢谢～！
 
